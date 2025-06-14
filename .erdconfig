@@ -1,0 +1,4 @@
+only:
+  - User
+  - Post
+  - Comment
