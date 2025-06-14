@@ -1,0 +1,29 @@
+<%# app/views/posts/_form.html.erb %>
+
+<%= form_with(model: post, local: true, class: "mb-4") do |form| %>
+  <%# This block displays validation errors %>
+  <% if post.errors.any? %>
+    <div class="alert alert-danger">
+      <h5><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h5>
+      <ul>
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control", placeholder: "Enter post title", required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :body, class: "form-label" %>
+    <%= form.text_area :body, class: "form-control", rows: 5, placeholder: "Write your post content here...", required: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

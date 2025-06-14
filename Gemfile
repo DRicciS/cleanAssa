@@ -65,5 +65,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-
+# Gemfile
+gem "devise"
+gem "cancancan"
 gem "cssbundling-rails", "~> 1.4"

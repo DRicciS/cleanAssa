@@ -1,0 +1,8 @@
+<%# app/views/comments/_form.html.erb %>
+
+<%= form_with(model: [post, comment], local: true) do |form| %>
+  <div class="mb-3">
+    <%= form.text_area :content, class: 'form-control', placeholder: 'Leave a comment...', required: true %>
+  </div>
+  <%= form.submit 'Post Comment', class: 'btn btn-secondary' %>
+<% end %>

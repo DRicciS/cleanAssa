@@ -1,24 +1,15 @@
-# README
+* **Admin Login**
+    * **Email**: `admin@example.com`
+    * **Password**: `password`
+* **Regular User Login**
+    * **Email**: `user@example.com`
+    * **Password**: `password`
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    * **Regular User**:
+    * Can read all posts.
+    * Can create new posts.
+    * Can only edit or delete their *own* posts.
+    * Can create comments on any post.
+    * Can only delete their *own* comments.
+* **Admin User**:
+    * Can perform any action on any resource (Users, Posts, Comments). They can manage everything.

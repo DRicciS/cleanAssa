@@ -1,2 +1,17 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="card mb-4">
+  <div class="card-body">
+    <h1 class="card-title"><%= @user.name %></h1>
+    <h6 class="card-subtitle mb-2 text-muted"><%= @user.email %></h6>
+  </div>
+</div>
+
+<h3>Posts by <%= @user.name %> (<%= @user.posts.count %>)</h3>
+<hr>
+<div class="list-group">
+  <% @user.posts.each do |post| %>
+    <%= link_to post_path(post), class: "list-group-item list-group-item-action" do %>
+      <h5 class="mb-1"><%= post.title %></h5>
+      <small class="text-muted"><%= time_ago_in_words(post.created_at) %> ago</small>
+    <% end %>
+  <% end %>
+</div>
