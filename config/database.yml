@@ -79,6 +79,12 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
+  adapter: postgresql
+   encoding: unicode
+   pool: 5
+   # The DATABASE_URL environment variable from docker-compose.yml takes precedence
+   # but it's good practice to have this as a fallback.
+  url: <%= ENV.fetch("DATABASE_URL", "") %>
   primary: &primary_production
     <<: *default
     database: my_rails_app_production
